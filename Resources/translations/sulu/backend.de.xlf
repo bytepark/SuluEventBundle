@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="de" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>sulu.navigation.events</source>
+                <target>Events</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>sulu.content-navigation.event.details</source>
+                <target>Details</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>sulu.event.type</source>
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>sulu.event.top_event</source>
+                <target>Top-Event</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>sulu.event.title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>sulu.event.start_date</source>
+                <target>Startdatum</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>sulu.event.start_time</source>
+                <target>Startzeit</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>sulu.event.end_date</source>
+                <target>Enddatum</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>sulu.event.description</source>
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>sulu.event.categories</source>
+                <target>Kategorien</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>sulu.event.description_venue</source>
+                <target>Beschreibung Veranstaltungsort</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>sulu.event.zip</source>
+                <target>PLZ</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>sulu.event.city</source>
+                <target>Ort</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>sulu.event.country</source>
+                <target>Land</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>sulu.event.national_association</source>
+                <target>Landesverband</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>sulu.event.website</source>
+                <target>Website</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>sulu.event.no_categories_available</source>
+                <target>Keine Kategorien verfügbar</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>sulu.event.venue</source>
+                <target>Veranstaltungsort</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>sulu.event.regular_entry_fee</source>
+                <target>Preis regulär</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>sulu.event.regular_entry_fee.date</source>
+                <target>Datum (bis-Angabe)</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>sulu.event.regular_entry_fee.price</source>
+                <target>Preis (in Euro)</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>sulu.event.organizer</source>
+                <target>Veranstalter</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>sulu.event.organizer.title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>sulu.event.organizer.contact_person</source>
+                <target>Ansprechpartner</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>sulu.event.organizer.contact_person.first_name</source>
+                <target>Vorname</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>sulu.event.organizer.contact_person.last_name</source>
+                <target>Nachname</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>sulu.event.organizer.street</source>
+                <target>Straße / Nr.</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>sulu.event.organizer.zip</source>
+                <target>PLZ</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>sulu.event.organizer.city</source>
+                <target>Ort</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>sulu.event.organizer.phone</source>
+                <target>Telefon</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>sulu.event.organizer.fax</source>
+                <target>Fax</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>sulu.event.organizer.email</source>
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>sulu.content-navigation.event.teaser</source>
+                <target>Teaser</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>sulu.content-navigation.event.entry_fee</source>
+                <target>Preise</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>sulu.event.events</source>
+                <target>Events</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>sulu.content-navigation.event.organizer</source>
+                <target>Veranstalter</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>sulu.content-navigation.event.entry_fee</source>
+                <target>Preise</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>sulu.event.coordinates</source>
+                <target>Koordinaten</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>sulu.event.coordinates_latitude</source>
+                <target>Latitude</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>sulu.event.coordinates_longitude</source>
+                <target>Longitude</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>sulu.event.entryfee.remove</source>
+                <target>Eintrag löschen</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>sulu.event.entryfee.add</source>
+                <target>Preis hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>sulu.event.entryfee.edit</source>
+                <target>Preis bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>sulu.event.entryfee.valid_until_date</source>
+                <target>Datum (bis Angabe)</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>sulu.event.entryfee.price</source>
+                <target>Preis (in €)</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>sulu.event.slug</source>
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>sulu.event.button.google_maps</source>
+                <target>Google Maps</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

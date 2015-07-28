@@ -1,0 +1,110 @@
+{% extends "ClientWebsiteBundle:views:master.html.twig" %}
+
+{% block meta %}
+	{% if event.description is not empty %}
+		<meta name="description" content="{{ event.description|length > 155 ? event.description|striptags|slice(0, 155) ~ '...' : event.description|striptags  }}">
+	{% endif %}
+	<link rel="canonical" href="{{ url('sulu_events.detail', { 'id': event.id, 'slug': event.slug }) }}">
+{% endblock %}
+
+{% block title %}{{ event.title }}{% endblock %}
+
+{% block prepended_scripts %}{% spaceless %}
+	{% if google_maps_api_key is defined %}
+	<script src="//maps.googleapis.com/maps/api/js?key={google_maps_api_key}&amp;sensor=true&amp;language=de&amp;region=DE"></script>
+	{% endif %}
+{% endspaceless %}{% endblock %}
+
+{% block content %}
+	<p class="category-line event-category-line main-date">
+		{{ event.startDate|date("d.m.Y") }}
+	</p>
+	<h1 class="event-detail-title">{{ event.title }}</h1>
+	<div class="event-detail-content-holder">
+		<div class="event-detail-content event-content-left">
+			<h2 class="event-detail-place">{{ event.zip }} {{ event.city }}</h2>
+			<h3 class="event-subheading">{% for category in event.categories %} {{ category.name }} {% if not loop.last %} +++ {% endif %}{% endfor %}</h3>
+
+			<h3 class="event-subheading {% if event.endDate is defined and event.endDate is null %}last{% endif %}">Starts: {{ event.startDate|date("d.m.Y") }} at {{ event.startTime|date("H:i") }}</h3>
+			{% if event.endDate is defined and event.endDate is not null %}
+				<h3 class="event-subheading last">Ends: {{ event.endDate|date("d.m.Y") }}</h3>
+			{% endif %}
+
+			{% if event.regularEntryFees|length > 1 %}
+				<h3 class="event-subheading">Startgeld:</h3>
+				{% for fee in event.regularEntryFees %}
+					<h3 class="event-subheading {% if loop.last %}last{% else %}middle{% endif %}">{{ fee.price }}&euro; until {{ fee.validUntilDate|date("d.m.Y") }}</h3>
+				{% endfor %}
+			{% elseif event.regularEntryFees|length == 1 %}
+				{% for fee in event.regularEntryFees %}
+					<h3 class="event-subheading last">Entry fee: {{ fee.price }}&euro; until {{ fee.validUntilDate|date("d.m.Y") }}</h3>
+				{% endfor %}
+			{% endif %}
+
+			{% if event.description is defined and event.description != '' %}
+				<div class="event-description-holder">
+					{% autoescape false %}
+						{{ event.description }}
+					{% endautoescape %}
+				</div>
+			{% endif %}
+
+			{% if event.descriptionVenue is defined and event.descriptionVenue != '' %}
+				<h3 class="event-content-subheading">Event venue information</h3>
+				<div class="event-description-holder">
+					{% autoescape false %}
+						{{ event.descriptionVenue }}
+					{% endautoescape %}
+				</div>
+			{% endif %}
+
+			{% if event.website is defined and event.website != '' %}
+				<h3 class="event-subheading last"> More information: <a target="_blank" href="http://{{ event.website|preg_replace('$^http(s)?:\/\/$i','') }}">{{ event.website|preg_replace('$^http(s)?:\/\/$i','') }}</a></h3>
+			{% endif %}
+		</div>
+		<div class="event-detail-content event-content-right">
+			{% if event.media.0 is defined %}
+				<img class="event-image" src="{{ event.media.0.formats['640x480'] }}" />
+			{% endif %}
+			{% if event.organizer.title != '' %}
+				<div class="organizer-info">
+					<h3 class="event-content-subheading">Event organizer information:</h3>
+					<div class="organizer-content">
+						{% if event.organizer.title != '' %}
+							<p>{{ event.organizer.title }}</p>
+						{% endif %}
+
+						{% if event.organizer.street != '' %}
+							<p>{{ event.organizer.street }}</p>
+						{% endif %}
+
+						{% if event.organizer.zip != '' %}
+							<p>{{ event.organizer.zip }} {{ event.organizer.city }}</p>
+						{% endif %}
+					</div>
+					<div class="organizer-content">
+						{% if event.organizer.firstName != '' or event.organizer.lastName != '' %}
+							<p>{% if event.organizer.firstName != '' %}{{ event.organizer.firstName }} {% endif %}{% if event.organizer.lastName != '' %}{{ event.organizer.lastName }}{% endif %}</p>
+						{% endif %}
+						{% if event.organizer.phone != '' %}
+							<p> Tel.: {{ event.organizer.phone }}</p>
+						{% endif %}
+
+						{% if event.organizer.fax != '' %}
+							<p> Fax: {{ event.organizer.fax }}</p>
+						{% endif %}
+
+						{% if event.organizer.email != '' %}
+							<p> E-Mail: <strong><a href="mailto:{{ event.organizer.email }}">{{ event.organizer.email }}</a></strong></p>
+						{% endif %}
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block appended_scripts %}{% spaceless %}
+	{% set mapjs_src = "web/assets/js/map.js" %}
+	{% set searchbarjs_src = "web/assets/js/searchbar.js" %}
+{% endspaceless %}{% endblock %}

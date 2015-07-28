@@ -1,0 +1,4 @@
+sulu_events.detail:
+  pattern: /events/{id}/{slug}
+  defaults:
+    _controller: sulu_event.event_website.controller:detailAction

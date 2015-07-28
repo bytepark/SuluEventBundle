@@ -1,0 +1,14 @@
+<massive-search-mapping xmlns="http://massive.io/schema/dic/massive-search-mapping">
+
+    <mapping class="Sulu\Bundle\EventBundle\Entity\Event">
+        <index name="events" />
+        <id property="id"/>
+        <title property="title" />
+        <description property="description" />
+        <fields>
+            <field name="title" type="string"/>
+            <field name="description" type="string"/>
+        </fields>
+    </mapping>
+
+</massive-search-mapping>

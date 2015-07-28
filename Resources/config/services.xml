@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="sulu_event.content_navigation_provider.class">Sulu\Bundle\EventBundle\Admin\EventContentNavigationProvider</parameter>
+        <parameter key="sulu_event.admin.class">Sulu\Bundle\EventBundle\Admin\EventAdmin</parameter>
+        <parameter key="sulu_event.event_manager.class">Sulu\Bundle\EventBundle\Event\EventManager</parameter>
+        <parameter key="sulu_event.event_repository.class">Sulu\Bundle\EventBundle\Entity\EventRepository</parameter>
+        <parameter key="sulu_event.event_category_repository.class">Sulu\Bundle\CategoryBundle\Entity\CategoryRepository</parameter>
+        <parameter key="sulu_event.event_entry_fee_repository.class">Sulu\Bundle\EventBundle\Entity\EventEntryFeeRepository</parameter>
+        <parameter key="sulu_event.event_organizer_repository.class">Sulu\Bundle\EventBundle\Entity\EventOrganizerRepository</parameter>
+        <parameter key="sulu_event.event_entity">Sulu\Bundle\EventBundle\Entity\Event</parameter>
+        <parameter key="sulu_event.event_api_entity">Sulu\Bundle\EventBundle\Api\Event</parameter>
+        <parameter key="sulu_event.event_category_entity">Sulu\Bundle\CategoryBundle\Entity\Category</parameter>
+        <parameter key="sulu_event.event_entry_fee_entity">Sulu\Bundle\EventBundle\Entity\EventEntryFee</parameter>
+        <parameter key="sulu_event.event_organizer_entity">Sulu\Bundle\EventBundle\Entity\EventOrganizer</parameter>
+        <parameter key="sulu_event.event_website.controller.class">Sulu\Bundle\EventBundle\Controller\EventWebsiteController</parameter>
+        <parameter key="sulu_event.twig_extension.class">Sulu\Bundle\EventBundle\Twig\EventTwigExtension</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="sulu_event.twig_extension" class="%sulu_event.twig_extension.class%">
+            <argument type="service" id="sulu_website.navigation_mapper"/>
+            <argument type="service" id="sulu.content.mapper"/>
+            <argument type="service" id="sulu_website.resolver.structure"/>
+            <argument type="service" id="sulu.phpcr.session"/>
+            <argument type="service" id="sulu_core.webspace.request_analyzer"/>
+            <argument>%kernel.root_dir%</argument>
+            <tag name="twig.extension" />
+        </service>
+
+        <service id="sulu_event.content_navigation_provider" class="%sulu_event.content_navigation_provider.class%">
+            <tag name="sulu_admin.content_navigation" alias="event" />
+        </service>
+
+        <service id="sulu_event.admin" class="%sulu_event.admin.class%">
+            <tag name="sulu.admin"/>
+            <tag name="sulu.context" context="admin"/>
+            <argument type="service" id="sulu_security.security_checker"/>
+            <argument>%sulu_admin.name%</argument>
+        </service>
+
+        <service id="sulu_event.event_repository" class="%sulu_event.event_repository.class%"
+                 factory-method="getRepository" factory-service="doctrine.orm.entity_manager">
+            <argument>%sulu_event.event_entity%</argument>
+        </service>
+
+        <service id="sulu_event.event_category_repository" class="%sulu_event.event_category_repository.class%"
+                 factory-method="getRepository" factory-service="doctrine.orm.entity_manager">
+            <argument>%sulu_event.event_category_entity%</argument>
+        </service>
+
+        <service id="sulu_event.event_entry_fee_repository" class="%sulu_event.event_entry_fee_repository.class%"
+                 factory-method="getRepository" factory-service="doctrine.orm.entity_manager">
+            <argument>%sulu_event.event_entry_fee_entity%</argument>
+        </service>
+
+        <service id="sulu_event.event_organizer_repository" class="%sulu_event.event_organizer_repository.class%"
+                 factory-method="getRepository" factory-service="doctrine.orm.entity_manager">
+            <argument>%sulu_event.event_organizer_entity%</argument>
+        </service>
+
+        <service id="sulu_event.event_website.controller" class="%sulu_event.event_website.controller.class%">
+            <argument type="service" id="templating"/>
+            <argument type="service" id="sulu_event.event_manager"/>
+            <argument type="service" id="sulu_core.webspace.request_analyzer" on-invalid="ignore"/>
+            <argument type="service" id="sulu_website.resolver.request_analyzer"/>
+            <argument type="service" id="router.default" />
+            <argument type="service" id="sulu_website.resolver.parameter" />
+            <argument>%sulu_http_cache.handler.public.max_age%</argument>
+            <argument>%sulu_http_cache.handler.public.shared_max_age%</argument>
+        </service>
+
+        <service id="events_website_controller" alias="sulu_event.event_website.controller" />
+
+        <service id="sulu_event.event_manager" class="%sulu_event.event_manager.class%">
+            <argument type="service" id="sulu_event.event_repository"/>
+            <argument type="service" id="sulu_event.event_category_repository"/>
+            <argument type="service" id="sulu_event.event_entry_fee_repository"/>
+            <argument type="service" id="sulu_event.event_organizer_repository"/>
+            <argument type="service" id="sulu_media.media_manager"/>
+            <argument type="service" id="doctrine.orm.entity_manager"/>
+            <argument>%sulu_event.event_entity%</argument>
+            <argument>%sulu_event.event_api_entity%</argument>
+        </service>
+    </services>
+</container>

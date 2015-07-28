@@ -1,0 +1,7 @@
+sulu_event.events:
+   type: rest
+   resource: "@SuluEventBundle/Controller/EventController.php"
+
+sulu_event.entryfee:
+   type: rest
+   resource: "@SuluEventBundle/Controller/EventEntryFeeController.php"

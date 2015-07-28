@@ -1,0 +1,114 @@
+<form class="form-horizontal" id="event-organizer">
+    <input type="hidden" id="id" data-mapper-property="id"/>
+
+    <h2 class="divider"><%= translate('sulu.event.organizer') %></h2>
+
+    <div class="grid-row small">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="title"><%= translate('sulu.event.organizer.title') %></label>
+                <input class="form-element" type="text" id="title"
+                       data-validation-required="false"
+                       data-validation-max-length="128"
+                       data-mapper-property="title"/>
+            </div>
+        </div>
+    </div>
+
+    <h3><%= translate('sulu.event.organizer.contact_person') %></h3>
+
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <div class="form-group">
+                <label for="firstName"><%= translate('sulu.event.organizer.contact_person.first_name') %></label>
+                <input class="form-element" type="text" id="firstName"
+                       data-validation-required="false"
+                       data-validation-max-length="128"
+                       data-mapper-property="firstName"/>
+            </div>
+        </div>
+
+        <div class="grid-col-6">
+            <div class="form-group">
+                <label for="lastName"><%= translate('sulu.event.organizer.contact_person.last_name') %></label>
+                <input class="form-element" type="text" id="lastName"
+                       data-validation-required="false"
+                       data-validation-max-length="128"
+                       data-mapper-property="lastName"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="street"><%= translate('sulu.event.organizer.street') %></label>
+                <input class="form-element" type="text" id="street"
+                       data-validation-required="false"
+                       data-validation-max-length="128"
+                       data-mapper-property="street"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="grid-col-6">
+            <div class="form-group">
+                <label for="zip"><%= translate('sulu.event.organizer.zip') %></label>
+                <input class="form-element" type="text" id="zip"
+                       data-validation-required="false"
+                       data-validation-max-length="128"
+                       data-mapper-property="zip"/>
+            </div>
+        </div>
+
+        <div class="grid-col-6">
+            <div class="form-group">
+                <label for="city"><%= translate('sulu.event.organizer.city') %></label>
+                <input class="form-element" type="text" id="city"
+                       data-validation-required="false"
+                       data-validation-max-length="128"
+                       data-mapper-property="city"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="phone"><%= translate('sulu.event.organizer.phone') %></label>
+                <input class="form-element" type="text" id="phone"
+                       data-validation-required="false"
+                       data-validation-max-length="128"
+                       data-mapper-property="phone"/>
+            </div>
+        </div>
+
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="fax"><%= translate('sulu.event.organizer.fax') %></label>
+                <input class="form-element" type="text" id="fax"
+                       data-validation-required="false"
+                       data-validation-max-length="128"
+                       data-mapper-property="fax"/>
+            </div>
+        </div>
+
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="email"><%= translate('sulu.event.organizer.email') %></label>
+
+                <div id="email"
+                     data-form="true"
+                     data-type="husky-input"
+                     data-aura-component="input@husky"
+                     data-aura-skin="email"
+                     data-aura-instance-name="email"
+                     data-aura-input-id="email"
+                     data-aura-input-name="email"
+                     data-mapper-property="email">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

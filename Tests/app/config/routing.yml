@@ -1,0 +1,11 @@
+event_bundle:
+    resource: "@SuluEventBundle/Resources/config/routing.yml"
+    prefix: /admin/events
+
+event_bundle_api:
+    resource: "@SuluEventBundle/Resources/config/routing_api.yml"
+    prefix: /admin/api
+
+# for preview
+event_bundle_website:
+    resource: "@SuluEventBundle/Resources/config/routing_website.yml"

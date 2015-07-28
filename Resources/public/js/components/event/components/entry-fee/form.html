@@ -1,0 +1,43 @@
+<form class="form-horizontal" id="event-entry-fee-form">
+    <input type="hidden" id="id" data-mapper-property="id"/>
+    <input type="hidden" id="eventId" data-mapper-property="eventId" value="<%= eventId %>"/>
+
+    <div class="grid-row">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="validUntilDate"
+                       class="required"><%=translate('sulu.event.entryfee.valid_until_date')%></label>
+
+                <div id="validUntilDate"
+                     data-form="true"
+                     data-type="husky-input"
+                     data-aura-component="input@husky"
+                     data-aura-skin="date"
+                     data-aura-instance-name="validUntilDate"
+                     data-aura-input-id="validUntilDate"
+                     data-aura-input-name="validUntilDate"
+                     data-mapper-property="validUntilDate"
+                     data-validation-required="true">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="price" class="required"><%=translate('sulu.event.entryfee.price')%></label>
+
+                <div id="price"
+                     data-form="true"
+                     data-type="husky-input"
+                     data-aura-component="input@husky"
+                     data-aura-instance-name="price"
+                     data-aura-input-id="price"
+                     data-aura-input-name="price"
+                     data-mapper-property="price"
+                     data-validation-required="true">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

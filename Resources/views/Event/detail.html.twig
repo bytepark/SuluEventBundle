@@ -1,0 +1,261 @@
+<form class="form-horizontal" id="event-detail">
+    <input type="hidden" id="id" data-mapper-property="id"/>
+    <input type="hidden" id="slug" data-mapper-property="slug"/>
+
+
+    <div class="grid-row">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <span></span>
+                <div>
+                    <div class="custom-checkbox">
+                        <input id="isTopEvent" type="checkbox" class="form-element" data-mapper-property="isTopEvent"/>
+                        <span class="icon"></span>
+                    </div>
+                    <label for="isTopEvent" class="inline clickable"><%=translate('sulu.event.top_event')%></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="dark-divider"/>
+
+    <div class="grid-row small">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="title" class="required"><%= translate('sulu.event.title') %></label>
+                <input class="form-element" type="text" id="title"
+                       data-validation-required="true"
+                       data-validation-max-length="128"
+                       data-mapper-property="title"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row small">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="media"><%=translate('sulu.content-navigation.event.teaser')%></label>
+
+                <div id="media"
+                     data-mapper-property="media"
+                     data-form="true"
+                     data-aura-types="image"
+                     data-type="mediaSelection"
+                     data-aura-display-options="{&quot;leftTop&quot;:false,&quot;top&quot;:false,&quot;rightTop&quot;:false,&quot;left&quot;:false,&quot;middle&quot;:false,&quot;right&quot;:false,&quot;leftBottom&quot;:false,&quot;bottom&quot;:false,&quot;rightBottom&quot;:false}"
+                     data-aura-default-display-option="top"
+                     data-aura-component="media-selection@sulumedia"
+                     data-aura-instance-name="media"
+                     data-aura-url="/admin/api/media">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="startDate" class="required"><%=translate('sulu.event.start_date')%></label>
+
+                <div id="startDate"
+                     data-form="true"
+                     data-type="husky-input"
+                     data-aura-component="input@husky"
+                     data-aura-skin="date"
+                     data-aura-instance-name="startDate"
+                     data-aura-input-id="startDate"
+                     data-aura-input-name="startDate"
+                     data-mapper-property="startDate"
+                     data-validation-required="true">
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="startTime"><%=translate('sulu.event.start_time')%></label>
+
+                <div id="startTime"
+                     data-form="true"
+                     data-type="husky-input"
+                     data-aura-component="input@husky"
+                     data-aura-skin="time"
+                     data-aura-instance-name="startTime"
+                     data-aura-input-id="startTime"
+                     data-aura-input-name="startTime"
+                     data-mapper-property="startTime"
+                     data-validation-required="false">
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="endDate"><%=translate('sulu.event.end_date')%></label>
+
+                <div id="endDate"
+                     data-form="true"
+                     data-type="husky-input"
+                     data-aura-component="input@husky"
+                     data-aura-skin="date"
+                     data-aura-instance-name="endDate"
+                     data-aura-input-id="endDate"
+                     data-aura-input-name="endDate"
+                     data-mapper-property="endDate"
+                     data-validation-required="false">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row small">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="description" class="top"><%= translate('sulu.event.description') %></label>
+                <textarea id="description"
+                          class="form-element"
+                          data-type="textEditor"
+                          data-type-instance-name="description"
+                          data-aura-component="ckeditor@husky"
+                          data-aura-height="300"
+                          data-mapper-property="description"
+                          data-aura-instance-name="description">
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="website"><%= translate('sulu.event.website') %></label>
+                <input class="form-element" type="text" id="website"
+                       data-validation-required="false"
+                       data-validation-max-length="512"
+                       data-mapper-property="website"/>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="divider"><%= translate('sulu.event.categories') %></h2>
+
+    <div class="grid-row small">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label class="top p-top-10 required"><%= translate('sulu.event.categories') %></label>
+
+                <div id="categories">
+                    <div data-aura-component="datagrid@husky"
+                         data-aura-url="/admin/api/categories?flat=true&sortBy=depth&sortOrder=asc"
+                         data-aura-result-key="categories"
+                         data-aura-pagination="false"
+                         data-aura-instance-name="categories"
+                         data-aura-children-property-name="hasChildren"
+                         data-aura-resize-listeners="false"
+                         data-aura-view-options='{"table":{"noItemsText":"sulu.category.no-categories-available","showHead":false,"cssClass":"white-box","selectItem":{"type":"checkbox","inFirstCell":true}}}'
+                         data-aura-matchings='[{"name":"name","content":"Name"},{"name":"id","disabled":true},{"name":"children","disabled":true},{"name":"parent","disabled":true}]'
+                         data-form="true"
+                         data-type="categoryList"
+                         data-mapper-property="categories"
+                         data-validation-required="true"
+                         id="categoriesList">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="divider"><%= translate('sulu.event.venue') %></h2>
+
+    <div class="grid-row">
+        <div class="grid-col-12">
+            <div class="form-group">
+                <label for="descriptionVenue" class="top"><%= translate('sulu.event.description') %></label>
+                <textarea id="descriptionVenue"
+                          class="form-element"
+                          data-type="textEditor"
+                          data-type-instance-name="descriptionVenue"
+                          data-aura-component="ckeditor@husky"
+                          data-aura-height="300"
+                          data-mapper-property="descriptionVenue"
+                          data-aura-instance-name="descriptionVenue">
+                </textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="zip" class="required"><%= translate('sulu.event.zip') %></label>
+                <input class="form-element" type="text" id="zip"
+                       data-validation-required="true"
+                       data-mapper-property="zip"/>
+            </div>
+        </div>
+
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="city" class="required"><%= translate('sulu.event.city') %></label>
+                <input class="form-element" type="text" id="city"
+                       data-validation-required="true"
+                       data-validation-max-length="128"
+                       data-mapper-property="city"/>
+            </div>
+        </div>
+
+        <div class="grid-col-4">
+            <div class="form-group">
+                <label for="country" class="required"><%= translate('sulu.event.country') %></label>
+
+                <div id="country"
+                     data-aura-component="select@husky"
+                     data-aura-data="{{ countries|json_encode() }}"
+                     data-aura-default-label="<%=translate('public.please-choose')%>"
+                     data-aura-multiple-select="false"
+                     data-aura-instance-name="country"
+                     data-type-label="id"
+                     data-aura-direction="bottom"
+                     data-type-required="country"
+                     data-mapper-property="country"
+                     data-type="husky-select"
+                     data-validation-required="true"
+                     data-aura-pre-selected-elements="[]"
+                     data-form="true">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="divider"><%= translate('sulu.event.coordinates') %></h2>
+
+    <div class="grid-row">
+        <div class="grid-col-5">
+            <div class="form-group">
+                <label for="latitude" class="required"><%= translate('sulu.event.coordinates_latitude') %></label>
+                <input class="form-element" type="text" id="latitude"
+                       data-validation-required="true"
+                       data-validation-max-length="128"
+                       data-mapper-property="latitude"/>
+            </div>
+        </div>
+
+        <div class="grid-col-5">
+            <div class="form-group">
+                <label for="longitude" class="required"><%= translate('sulu.event.coordinates_longitude') %></label>
+                <input class="form-element" type="text" id="longitude"
+                       data-validation-required="true"
+                       data-validation-max-length="128"
+                       data-mapper-property="longitude"/>
+            </div>
+        </div>
+
+        <div class="grid-col-2">
+            <a href="https://maps.google.de" target="_blank" class="btn action block">
+                <span class="fa-map-marker"></span><span class="text"><%= translate('sulu.event.button.google_maps') %></span>
+            </a>
+        </div>
+    </div>
+
+
+</form>

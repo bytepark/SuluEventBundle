@@ -1,0 +1,15 @@
+sulu_event.event_list:
+   pattern: /template/event/list.html
+   defaults: { _controller: SuluEventBundle:Template:eventList }
+
+sulu_event.event_detail:
+   pattern: /template/event/detail.html
+   defaults: { _controller: SuluEventBundle:Template:eventDetail }
+
+sulu_event.event_entry_fee:
+   pattern: /template/event/entry-fee.list.html
+   defaults: { _controller: SuluEventBundle:Template:eventEntryFeeList }
+
+sulu_event.event_organizer:
+   pattern: /template/event/organizer.html
+   defaults: { _controller: SuluEventBundle:Template:eventOrganizer }

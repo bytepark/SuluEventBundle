@@ -1,0 +1,33 @@
+{
+  "name": "sulu/event-bundle",
+  "type": "sulu-bundle",
+  "description": "The Sulu Bundle for managing events",
+  "license": "MIT",
+  "keywords": ["sulu", "product"],
+  "authors": [
+    {
+      "name": "bytepark GmbH",
+      "homepage": "https://github.com/bytepark/SuluEventBundle"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+
+    "sulu/sulu": "dev-develop"
+  },
+  "require-dev": {
+    "sensio/framework-extra-bundle":  "~3.0",
+    "symfony/symfony": "2.6.*",
+    "symfony/monolog-bundle": "2.4.*",
+    "phpunit/phpunit": "~4.0.0",
+    "symfony-cmf/testing": "~1.2",
+    "sulu/test-bundle": "dev-develop",
+    "massive/search-bundle": "0.7.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Sulu\\Bundle\\EventBundle": ""
+    }
+  },
+  "target-dir": "Sulu/Bundle/EventBundle"
+}
