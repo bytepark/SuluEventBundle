@@ -64,6 +64,17 @@ lines to the file `app/config/sulu.yml`.
                         internal: false
                         type: "page"
 
+### Configuration
+
+In order to use the LoadEvents data fixture, you have to provide a valid Google Maps Api key and the path
+to the CSV file to import. Add the following setup to your `config.yml`:
+
+    sulu_event:
+        google_maps_api_key: xxx
+        sulu_event.csv_import_file: '%kernel.root_dir%/../data/my.csv'
+
+You can find the format of the CSV file in `DataFixtures/Events/events.csv`. 
+
 ## API
 
 ### Filters

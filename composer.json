@@ -12,8 +12,10 @@
   ],
   "require": {
     "php": ">=5.4",
+    "ext-intl": "*",
 
-    "sulu/sulu": "dev-develop"
+    "sulu/sulu": "dev-develop",
+    "guzzlehttp/guzzle": "5.2.0"
   },
   "require-dev": {
     "sensio/framework-extra-bundle":  "~3.0",

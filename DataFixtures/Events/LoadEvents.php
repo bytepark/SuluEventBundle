@@ -10,15 +10,15 @@
 
 namespace Sulu\Bundle\EventBundle\DataFixtures\Events;
 
-use Bytepark\Csv\CsvIterator;
-use Bytepark\Geocoder\GoogleMaps;
-use Bytepark\HttpAdapter\GuzzleHttpAdapter;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Locale;
+use Sulu\Bundle\EventBundle\Csv\CsvIterator;
 use Sulu\Bundle\EventBundle\Entity\Event;
 use Sulu\Bundle\EventBundle\Entity\EventOrganizer;
-use Locale;
+use Sulu\Bundle\SuluEventBundle\Geocoder\GoogleMaps;
+use Sulu\Bundle\SuluEventBundle\HttpAdapter\GuzzleHttpAdapter;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
