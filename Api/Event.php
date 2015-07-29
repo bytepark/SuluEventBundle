@@ -28,7 +28,7 @@ use Sulu\Bundle\CategoryBundle\Entity\Category as CategoryEntity;
  * @Relation("self", href="expr('/admin/api/events/' ~ object.getId())")
  * @ExclusionPolicy("all")
  *
- * @package Sulu\Bundle\EventBundle\Api
+ * @package    Sulu\Bundle\EventBundle\Api
  * @author     bytepark GmbH <code@bytepark.de>
  * @link       http://www.bytepark.de
  */

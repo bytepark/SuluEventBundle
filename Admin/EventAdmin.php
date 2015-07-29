@@ -18,7 +18,7 @@ use Sulu\Component\Security\Authorization\SecurityCheckerInterface;
 /**
  * EventAdmin
  *
- * @package Sulu\Bundle\EventBundle\Admin
+ * @package    Sulu\Bundle\EventBundle\Admin
  * @author     bytepark GmbH <code@bytepark.de>
  * @link       http://www.bytepark.de
  */

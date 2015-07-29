@@ -18,7 +18,7 @@ use Sulu\Bundle\CategoryBundle\Entity\Category as Entity;
 /**
  * EventCategory
  *
- * @package Sulu\Bundle\EventBundle\Api
+ * @package    Sulu\Bundle\EventBundle\Api
  * @author     bytepark GmbH <code@bytepark.de>
  * @link       http://www.bytepark.de
  */

@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * SuluEventBundle
  *
- * @package Sulu\Bundle\EventBundle
+ * @package    Sulu\Bundle\EventBundle
  * @author     bytepark GmbH <code@bytepark.de>
  * @link       http://www.bytepark.de
  */

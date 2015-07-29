@@ -25,7 +25,7 @@ use Sulu\Bundle\EventBundle\Entity\Event as EventEntity;
  * @Relation("self", href="expr('/admin/api/entryfee/' ~ object.getId())")
  * @ExclusionPolicy("all")
  *
- * @package Sulu\Bundle\EventBundle\Api
+ * @package    Sulu\Bundle\EventBundle\Api
  * @author     bytepark GmbH <code@bytepark.de>
  * @link       http://www.bytepark.de
  */

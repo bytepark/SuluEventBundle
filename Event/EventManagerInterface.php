@@ -16,7 +16,7 @@ use Sulu\Bundle\EventBundle\Entity\Event;
 /**
  * EventManagerInterface
  *
- * @package Sulu\Bundle\EventBundle\Event
+ * @package    Sulu\Bundle\EventBundle\Event
  * @author     bytepark GmbH <code@bytepark.de>
  * @link       http://www.bytepark.de
  */

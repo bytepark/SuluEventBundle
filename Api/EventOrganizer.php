@@ -22,7 +22,7 @@ use Sulu\Component\Rest\ApiWrapper;
  *
  * @ExclusionPolicy("all")
  *
- * @package Sulu\Bundle\EventBundle\Api
+ * @package    Sulu\Bundle\EventBundle\Api
  * @author     bytepark GmbH <code@bytepark.de>
  * @link       http://www.bytepark.de
  */

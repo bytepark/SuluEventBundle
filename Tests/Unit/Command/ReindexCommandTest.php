@@ -1,10 +1,11 @@
 <?php
-<<<<<<< HEAD
-/**
- * Created by PhpStorm.
- * User: stm
- * Date: 24.07.2015
- * Time: 12:08
+/*
+ * This file is part of the Sulu CMS.
+ *
+ * (c) bytepark GmbH
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Sulu\Bundle\EventBundle\Tests\Unit\Command;
@@ -17,6 +18,13 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * ReindexCommandTest
+ *
+ * @package    Sulu\Bundle\EventBundle\Tests\Unit\Command
+ * @author     bytepark GmbH <code@bytepark.de>
+ * @link       http://www.bytepark.de
+ */
 class ReindexCommandTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -57,15 +65,15 @@ class ReindexCommandTest extends \PHPUnit_Framework_TestCase
         $this->searchManager = $this->getMock(SearchManagerInterface::class);
     }
 
-	/**
-	 * testItSetsConfiguratoin
-	 *
-	 */
-	public function testItSetsConfiguration(){
-		$reIndexCommand = new ReindexCommand('test');
-		$reIndexCommand->configure();
-		$this->assertEquals('sulu:search:reindex-events',$reIndexCommand->getName());
-	}
+    /**
+     * testItSetsConfiguratoin
+     *
+     */
+    public function testItSetsConfiguration(){
+        $reIndexCommand = new ReindexCommand('test');
+        $reIndexCommand->configure();
+        $this->assertEquals('sulu:search:reindex-events', $reIndexCommand->getName());
+    }
 
     /**
      * testItAsksTheEventManagerForAllEvents
