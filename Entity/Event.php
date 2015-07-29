@@ -14,6 +14,7 @@ use Behat\Transliterator\Transliterator;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Sulu\Bundle\CategoryBundle\Entity\Category;
 use Sulu\Bundle\MediaBundle\Entity\Media;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -380,10 +381,10 @@ class Event
     /**
      * Add category
      *
-     * @param \Sulu\Bundle\CategoryBundle\Entity\Category $categories
+     * @param Category $categories
      * @return Event
      */
-    public function addCategory(\Sulu\Bundle\CategoryBundle\Entity\Category $categories)
+    public function addCategory(Category $categories)
     {
         $this->categories[] = $categories;
 
@@ -393,12 +394,12 @@ class Event
     /**
      * Add categories
      *
-     * @param \Sulu\Bundle\CategoryBundle\Entity\Category $categories
+     * @param Category $categories
      * @return Event
      *
      * FIXME someone needs this ugly methods .... (restcontroller)
      */
-    public function addCategorie(\Sulu\Bundle\CategoryBundle\Entity\Category $categories)
+    public function addCategorie(Category $categories)
     {
         $this->categories[] = $categories;
 
@@ -408,9 +409,9 @@ class Event
     /**
      * Remove category
      *
-     * @param \Sulu\Bundle\CategoryBundle\Entity\Category $categories
+     * @param Category $categories
      */
-    public function removeCategory(\Sulu\Bundle\CategoryBundle\Entity\Category $categories)
+    public function removeCategory(Category $categories)
     {
         $this->categories->removeElement($categories);
     }
@@ -418,11 +419,11 @@ class Event
     /**
      * Remove categories
      *
-     * @param \Sulu\Bundle\CategoryBundle\Entity\Category $categories
+     * @param Category $categories
      *
      * FIXME someone needs this ugly methods .... (restcontroller)
      */
-    public function removeCategorie(\Sulu\Bundle\CategoryBundle\Entity\Category $categories)
+    public function removeCategorie(Category $categories)
     {
         $this->categories->removeElement($categories);
     }

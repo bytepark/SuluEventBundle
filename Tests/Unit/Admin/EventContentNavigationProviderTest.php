@@ -19,7 +19,7 @@ use Sulu\Bundle\EventBundle\Admin\EventContentNavigationProvider;
  * @author     bytepark GmbH <code@bytepark.de>
  * @link       http://www.bytepark.de
  */
-class EventContentNavigationProviderTest extends  \PHPUnit_Framework_TestCase
+class EventContentNavigationProviderTest extends \PHPUnit_Framework_TestCase
 {
 
     /**

@@ -171,7 +171,7 @@ class EventTwigExtension extends \Twig_Extension
      * @param int    $limit
      * @return mixed|null
      */
-    public function preg_replace($subject, $pattern, $replacement='', $limit=-1)
+    public function preg_replace($subject, $pattern, $replacement = '', $limit = -1)
     {
         if (!isset($subject)) {
             return null;

@@ -476,5 +476,4 @@ class Event extends ApiWrapper
     {
         return $this->entity->getSlug();
     }
-
 }

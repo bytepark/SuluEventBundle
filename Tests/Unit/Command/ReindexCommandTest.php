@@ -69,7 +69,8 @@ class ReindexCommandTest extends \PHPUnit_Framework_TestCase
      * testItSetsConfiguratoin
      *
      */
-    public function testItSetsConfiguration(){
+    public function testItSetsConfiguration()
+    {
         $reIndexCommand = new ReindexCommand('test');
         $reIndexCommand->configure();
         $this->assertEquals('sulu:search:reindex-events', $reIndexCommand->getName());

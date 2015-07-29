@@ -30,7 +30,7 @@ class EventControllerTest extends SuluTestCase
     }
 
     private function initOrm()
-	{
+    {
         $this->purgeDatabase();
         $event = new Event();
         $event->setTitle('test');

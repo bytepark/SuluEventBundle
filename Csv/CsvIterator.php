@@ -52,7 +52,7 @@ class CsvIterator implements Iterator
      *
      * @throws Exception
      */
-    public function __construct($file, $delimiter=';')
+    public function __construct($file, $delimiter = ';')
     {
         try {
             $this->filePointer = fopen($file, 'r');

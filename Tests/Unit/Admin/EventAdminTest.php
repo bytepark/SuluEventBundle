@@ -79,7 +79,7 @@ class EventAdminTest extends \PHPUnit_Framework_TestCase
     {
         $this->securityChecker->expects($this->once())->method('hasPermission')->with('sulu.event.events', 'view')->willReturn(true);
         $eventAdmin = new EventAdmin($this->securityChecker, 'test');
-        $this->assertEquals('calendar',array_values(array_values($eventAdmin->getNavigation()->getRoot()->getChildren())[0]->getChildren())[0]->getIcon());
+        $this->assertEquals('calendar', array_values(array_values($eventAdmin->getNavigation()->getRoot()->getChildren())[0]->getChildren())[0]->getIcon());
     }
 
     /**
@@ -89,6 +89,6 @@ class EventAdminTest extends \PHPUnit_Framework_TestCase
     {
         $this->securityChecker->expects($this->once())->method('hasPermission')->with('sulu.event.events', 'view')->willReturn(true);
         $eventAdmin = new EventAdmin($this->securityChecker, 'test');
-        $this->assertEquals('events',array_values(array_values($eventAdmin->getNavigation()->getRoot()->getChildren())[0]->getChildren())[0]->getAction());
+        $this->assertEquals('events', array_values(array_values($eventAdmin->getNavigation()->getRoot()->getChildren())[0]->getChildren())[0]->getAction());
     }
 }
